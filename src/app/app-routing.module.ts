@@ -14,6 +14,9 @@ import {CommonModule} from '@angular/common';
 import { HeroListPageComponent } from './hero-list-page/hero-list-page.component';
 import { HeroListAutoComponent } from './hero-list-auto/hero-list-auto.component';
 import {HeroListAutoPageComponent} from './hero-list-auto/hero-list-auto-page.component';
+import {HeroListGroupPageComponent} from './hero-list-group-page.component';
+import {HeroListGroupsComponent} from './hero-list-groups.component';
+import { InsertRemoveComponent } from './insert-remove/insert-remove.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/enter-leave' },
@@ -23,7 +26,10 @@ const routes: Routes = [
   { path: 'status-slider', component: StatusSliderPageComponent },
   { path: 'toggle', component: ToggleAnimationsPageComponent },
   { path: 'enter-leave', component: HeroListEnterLeavePageComponent },
-  { path: 'auto', component: HeroListAutoPageComponent }
+  { path: 'auto', component: HeroListAutoPageComponent },
+  { path: 'heroes', component: HeroListPageComponent, data: { animation: 'FilterPage'} },
+  { path: 'hero-groups', component: HeroListGroupPageComponent },
+  { path: 'insert-remove', component: InsertRemoveComponent }
 ];
 
 @NgModule({
@@ -40,7 +46,10 @@ const routes: Routes = [
     HeroListEnterLeavePageComponent,
     HeroListPageComponent,
     HeroListAutoComponent,
-    HeroListAutoPageComponent
+    HeroListAutoPageComponent,
+    HeroListGroupPageComponent,
+    HeroListGroupsComponent,
+    InsertRemoveComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
